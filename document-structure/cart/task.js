@@ -89,3 +89,4 @@ function moveProduct(product, posX, posY, deltaX, deltaY, stopX) {
     }
 }
 
+
