@@ -9,6 +9,7 @@ body {
   display: block;
 }
 .control {
+  margin-top: 10px;
   padding: 20px;
   border-radius: 25px;
   border: 1px solid gray;
@@ -17,6 +18,7 @@ body {
 }
 
 .btn {
+  margin-top: 10px;  
   background: green;
   color: white;
   padding: 20px;
