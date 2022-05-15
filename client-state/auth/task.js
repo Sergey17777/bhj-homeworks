@@ -25,7 +25,7 @@ signinForm.addEventListener('submit', e => {
                 
         case 200:
           const answer = JSON.parse(this.responseText);
-          if (answer.success === undefined) {
+          if (!answer.success ) {
             alert('Ошибка ответа сервера');
             return;
           }
@@ -33,7 +33,7 @@ signinForm.addEventListener('submit', e => {
             alert('Неверный логин/пароль');
             return;
           }
-          if (answer.user_id === undefined) {
+          if (!answer.user_id) {
             alert('Ошибка ответа сервера');
             return;
           }
