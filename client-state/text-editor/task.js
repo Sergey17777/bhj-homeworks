@@ -1,5 +1,5 @@
 let editor = document.getElementById("editor");
-let reset = document.getElementById("resetBtn");
+let reset = document.getElementById("clear");
 let text = localStorage.getItem("textEditor");
 
 window.addEventListener("load", function() {
