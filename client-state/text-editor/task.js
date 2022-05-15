@@ -1,13 +1,32 @@
-'use strict';
-
 const editor = document.getElementById('editor');
-const button = document.getElementById('clear');
+const clearKey = document.getElementById('clearKey');
+const clearAll = document.getElementById('clearAll');
 
-const key = 'editorText';
+editor.addEventListener('input', saveText);
+window.addEventListener('load', printTextFromLocalStorage);
+clearKey.addEventListener('click', clear);
+clearAll.addEventListener('click', clear);
 
-button.addEventListener('click', () => editor.value = '');
 
-window.addEventListener('unload', () => localStorage[key] = editor.value);
+function saveText(event) {
+    localStorage.text = editor.value;
+}
 
-editor.value = localStorage[key];
+function printTextFromLocalStorage(event) {
+    if (localStorage.text) {
+        editor.value = localStorage.text;
+    }
+}
 
+function clear(event) {
+
+    event.preventDefault();
+
+    if (event.target === clearKey) {
+        localStorage.removeItem('text');
+        editor.value = '';
+    } else {
+        localStorage.clear();
+        editor.value = '';
+    }
+}
